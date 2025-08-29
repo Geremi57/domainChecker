@@ -83,8 +83,8 @@ email-domain-checker/
 Domain	Receives Emails	Spoof Protection	Spam Protection
 gmail.com	✅ Yes	✅ Yes	✅ Yes
 example.com	❌ No	❌ No	❌ No
-🤝 Contributing
 
+🤝 Contributing
 We welcome contributions!
 
 Fork the repo
