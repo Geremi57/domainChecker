@@ -64,11 +64,17 @@ http://localhost:8080
 📂 Project Structure
 email-domain-checker/
 │
+
 ├── main.go             # Go server + DNS logic
+
 ├── static/
+
 │   ├── index.html      # Frontend HTML
+
 │   ├── style.css       # Styling
+
 │   └── script.js       # Frontend logic
+
 └── README.md
 
 
