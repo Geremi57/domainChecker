@@ -18,6 +18,7 @@ type EmailCheckResponse struct {
 	Error                  string `json:"error,omitempty"`
 }
 
+//response will come from out in a folder called static
 func main() {
 	http.Handle("/", http.FileServer(http.Dir("./static")))
 	http.HandleFunc("/check", handleCheck)
@@ -26,6 +27,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
+//handling the checker from input
 func handleCheck(w http.ResponseWriter, r *http.Request) {
 	domain := r.URL.Query().Get("domain")
 	if domain == "" {
@@ -46,13 +48,13 @@ func checkDomain(domain string) EmailCheckResponse {
 		spamProtection   = "❌ Not configured"
 	)
 
-	// Check MX (mail server) records
+	// Check MX records if input can receive 
 	mxRecords, err := net.LookupMX(domain)
 	if err == nil && len(mxRecords) > 0 {
 		canReceiveEmails = "✅ Yes"
 	}
 
-	// Check SPF records
+	// Check SPF records email can be edited by 3rd parties
 	txtRecords, _ := net.LookupTXT(domain)
 	for _, record := range txtRecords {
 		if strings.HasPrefix(record, "v=spf1") {
@@ -61,7 +63,7 @@ func checkDomain(domain string) EmailCheckResponse {
 		}
 	}
 
-	// Check DMARC records
+	// Check DMARC records if the email is spam can we check it
 	dmarcRecords, _ := net.LookupTXT("_dmarc." + domain)
 	for _, record := range dmarcRecords {
 		if strings.HasPrefix(record, "v=DMARC1") {
