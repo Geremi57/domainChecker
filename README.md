@@ -71,6 +71,8 @@ email-domain-checker/
 │   └── script.js       # Frontend logic
 └── README.md
 
+
+
 🧩 Example Results
 Domain	Receives Emails	Spoof Protection	Spam Protection
 gmail.com	✅ Yes	✅ Yes	✅ Yes
