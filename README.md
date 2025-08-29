@@ -1,80 +1,80 @@
-📧 Email Domain Checker
+# 📧 Email Domain Checker
 
+A lightweight tool that checks if a domain is ready to send and receive emails. Built with **Go, HTML, CSS, and JavaScript**, this project focuses on DNS lookups, email security checks, and delivering results in simple, non-technical language.
 
-A beginner-friendly tool to quickly check if a domain is ready to send and receive secure emails.
+---
 
-🚀 Overview
+## 🚀 Features
 
-The Email Domain Checker is a lightweight web app built with Go, HTML, CSS, and JavaScript.
-It analyzes a domain and tells you:
-✅ If it can receive emails
-🛡️ If it’s protected from spoofing
-📜 If it has spam protection policies
+- **Domain Email Check:**  
+  Quickly find out if a domain can accept incoming emails.
 
-We use DNS records behind the scenes to make this simple:
+- **Spoof Protection Check:**  
+  Detects if the domain has security settings to prevent fake senders.
 
-MX records → To see if a domain can receive emails.
+- **Spam Protection Check:**  
+  Identifies if spam policies are in place to reduce junk mail.
 
-SPF checks → To find if it has protection against forged sender addresses.
+- **Simple & Clear UI:**  
+  All results are displayed in plain English for easy understanding.
 
-DMARC checks → To see if it has rules to handle suspicious or spam emails.
+- **Fast DNS Lookups:**  
+  The backend uses Go to perform lightning-fast DNS queries.
 
-🖥️ How It Works
+---
 
-Enter a domain or email (e.g., hello@gmail.com or gmail.com).
+## 🌐 Live Demo
 
-The backend extracts the domain and runs DNS checks.
+_Coming soon 🚀_
 
-The app translates technical results into easy-to-read statuses like:
+---
 
-📬 Receives Emails: Can this domain accept incoming mail?
+## 🛠️ Technologies Used
 
-🛡️ Spoof Protection: Is there protection to stop hackers pretending to be this domain?
+- **Go** (Backend & DNS queries)  
+- **HTML, CSS, JavaScript** (Frontend)  
+- **DNS Lookup Libraries** (MX, SPF, DMARC checks)
 
-📜 Spam Protection: Does the domain specify how suspicious emails are handled?
+---
+
+## 🖥️ How It Works
+
+1. Enter a domain or email (e.g., `example.com` or `hello@example.com`).  
+2. The app extracts the domain and checks for DNS records:
+   - **MX Records** → Email server setup check  
+   - **SPF Records** → Spoofing prevention  
+   - **DMARC Records** → Spam filtering policies  
+3. The results are shown in clear text, not technical jargon.
+
+---
+
+## ⚡ Quick Start
+
+### 1. Clone the Repo
+```bash
+git clone https://github.com/your-username/email-domain-checker.git
+cd email-domain-checker
+2. Run the Server
+go run main.go
+```
+
+3. Open in Browser
+http://localhost:8080
 
 📂 Project Structure
-email-checker/
+email-domain-checker/
 │
 ├── main.go             # Go server + DNS logic
 ├── static/
 │   ├── index.html      # Frontend HTML
 │   ├── style.css       # Styling
-│   └── script.js       # Frontend JavaScript
+│   └── script.js       # Frontend logic
 └── README.md
 
-⚡ Quick Start
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/email-checker.git
-cd email-checker
-
-2️⃣ Run the Server
-go run main.go
-
-3️⃣ Open in Browser
-http://localhost:8080
-
 🧩 Example Results
-Input	Receives Emails	Spoof Protection	Spam Protection
+Domain	Receives Emails	Spoof Protection	Spam Protection
 gmail.com	✅ Yes	✅ Yes	✅ Yes
 example.com	❌ No	❌ No	❌ No
-🌟 Why Use This
-
-Quickly see if a domain is ready for email communication
-
-Get a simple summary of security measures
-
-Perfect for beginners, IT students, or small business owners
-
-🛠️ Built With
-
-Go
- - Backend server and DNS lookups
-
-HTML, CSS, JS - Simple and clean frontend
-
-DNS Lookup Libraries - For domain record checks
-
 🤝 Contributing
 
 We welcome contributions!
